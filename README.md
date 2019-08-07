@@ -20,7 +20,7 @@ $ yarn global add typescript pm2
 $ pm2 log
 ```
 
-然后再打开一个shell编译一下 typescript
+然后再打开一个 shell 编译一下 typescript
 
 ```bash
 $ yarn
@@ -51,6 +51,6 @@ $ yarn start
 0|index    | -----------------------------------------------------------
 ```
 
-参考
+## 参考
 
 -   [Koa RESTful API 实战](https://github.com/MiYogurt/nodelover-books/tree/master/docs/koa-todo-api "github")
