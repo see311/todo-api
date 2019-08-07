@@ -14,17 +14,22 @@
 $ yarn global add typescript pm2
 ```
 
-先查监控日志
+先打开一个 shell 监控日志
 
 ```bash
 $ pm2 log
 ```
 
-最后启动项目
+然后再打开一个shell编译一下 typescript
 
 ```bash
 $ yarn
 $ yarn tsc
+```
+
+最后启动项目
+
+```bash
 $ yarn start
 ```
 
