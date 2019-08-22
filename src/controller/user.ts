@@ -45,7 +45,7 @@ export default {
                 }
             });
             console.log(ctx.state);
-            
+
             if (dbUser && verify(password, dbUser.password)) {
                 resBody = jwt.sign(
                     {
@@ -55,17 +55,17 @@ export default {
                     ctx.state.secret
                 );
             } else {
-                resStatus = 401;
+                resStatus = 404;
                 let error = new Error("用户名或密码错误");
                 throw error;
             }
         } catch (error) {
             console.error(error);
             resStatus = resStatus === 200 ? 422 : resStatus;
-            resBody = `${error.message}, ${error.name}`;
+            resBody = `${error.message}`;
         } finally {
             ctx.status = resStatus;
-            ctx.body = resBody;
+            ctx.body = { code: resStatus, message: resBody };
             await next();
         }
     }
