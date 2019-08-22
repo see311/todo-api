@@ -36,6 +36,7 @@ export default {
     async login(ctx: Context, next: () => Promise<any>) {
         let resBody: any;
         let resStatus = 200;
+
         try {
             const { email, password } = ctx.request.fields;
 
@@ -44,7 +45,6 @@ export default {
                     email
                 }
             });
-            console.log(ctx.state);
 
             if (dbUser && verify(password, dbUser.password)) {
                 resBody = jwt.sign(
